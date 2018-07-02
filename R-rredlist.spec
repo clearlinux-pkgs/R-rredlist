@@ -4,7 +4,7 @@
 #
 Name     : R-rredlist
 Version  : 0.4.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/rredlist_0.4.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rredlist_0.4.0.tar.gz
 Summary  : 'IUCN' Red List Client
