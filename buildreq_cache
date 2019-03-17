@@ -1,4 +1,9 @@
 0.5.0
 R-crul
+R-httr
 R-jsonlite
+R-triebeard
+R-urltools
 R-vcr
+R-withr
+R-yaml
