@@ -4,15 +4,21 @@
 #
 Name     : R-rredlist
 Version  : 0.5.0
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Summary  : 'IUCN' Red List Client
 Group    : Development/Tools
 License  : MIT
+Requires: R-base64enc
+Requires: R-lazyeval
+Requires: R-rlang
+BuildRequires : R-base64enc
 BuildRequires : R-crul
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
+BuildRequires : R-lazyeval
+BuildRequires : R-rlang
 BuildRequires : R-triebeard
 BuildRequires : R-urltools
 BuildRequires : R-vcr
@@ -37,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552862537
+export SOURCE_DATE_EPOCH=1552955130
 
 %install
-export SOURCE_DATE_EPOCH=1552862537
+export SOURCE_DATE_EPOCH=1552955130
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

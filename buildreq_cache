@@ -1,7 +1,10 @@
 0.5.0
+R-base64enc
 R-crul
 R-httr
 R-jsonlite
+R-lazyeval
+R-rlang
 R-triebeard
 R-urltools
 R-vcr
