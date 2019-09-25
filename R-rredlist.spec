@@ -4,36 +4,23 @@
 #
 Name     : R-rredlist
 Version  : 0.5.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Summary  : 'IUCN' Red List Client
 Group    : Development/Tools
 License  : MIT
-Requires: R-base64enc
-Requires: R-lazyeval
-Requires: R-rlang
-BuildRequires : R-base64enc
+Requires: R-crul
+Requires: R-jsonlite
+Requires: R-vcr
 BuildRequires : R-crul
-BuildRequires : R-httr
 BuildRequires : R-jsonlite
-BuildRequires : R-lazyeval
-BuildRequires : R-rlang
-BuildRequires : R-triebeard
-BuildRequires : R-urltools
 BuildRequires : R-vcr
-BuildRequires : R-withr
-BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
-rredlist
-========
-[![cran checks](https://cranchecks.info/badges/worst/rredlist)](https://cranchecks.info/pkgs/rredlist)
-[![Build Status](https://travis-ci.org/ropensci/rredlist.svg?branch=master)](https://travis-ci.org/ropensci/rredlist)
-[![codecov.io](https://codecov.io/github/ropensci/rredlist/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rredlist?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rredlist)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/rredlist)](https://cran.r-project.org/package=rredlist)
+The 'IUCN' Red List is a global list of threatened and endangered species.
+    Functions cover all of the Red List 'API' routes. An 'API' key is required.
 
 %prep
 %setup -q -c -n rredlist
@@ -42,13 +29,13 @@ rredlist
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552955130
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569373462
 
 %install
-export SOURCE_DATE_EPOCH=1552955130
+export SOURCE_DATE_EPOCH=1569373462
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,12 +64,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  rredlist || :
+R CMD check --no-manual --no-examples --no-codoc rredlist || :
 
 
 %files
