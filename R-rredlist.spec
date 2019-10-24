@@ -4,7 +4,7 @@
 #
 Name     : R-rredlist
 Version  : 0.5.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rredlist_0.5.0.tar.gz
 Summary  : 'IUCN' Red List Client
@@ -12,15 +12,20 @@ Group    : Development/Tools
 License  : MIT
 Requires: R-crul
 Requires: R-jsonlite
-Requires: R-vcr
 BuildRequires : R-crul
 BuildRequires : R-jsonlite
 BuildRequires : R-vcr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-The 'IUCN' Red List is a global list of threatened and endangered species.
-    Functions cover all of the Red List 'API' routes. An 'API' key is required.
+rredlist
+========
+[![cran checks](https://cranchecks.info/badges/worst/rredlist)](https://cranchecks.info/pkgs/rredlist)
+[![Build Status](https://travis-ci.org/ropensci/rredlist.svg?branch=master)](https://travis-ci.org/ropensci/rredlist)
+[![codecov.io](https://codecov.io/github/ropensci/rredlist/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rredlist?branch=master)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rredlist)](https://github.com/metacran/cranlogs.app)
+[![cran version](http://www.r-pkg.org/badges/version/rredlist)](https://cran.r-project.org/package=rredlist)
 
 %prep
 %setup -q -c -n rredlist
@@ -30,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569373462
+export SOURCE_DATE_EPOCH=1571897321
 
 %install
-export SOURCE_DATE_EPOCH=1569373462
+export SOURCE_DATE_EPOCH=1571897321
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
